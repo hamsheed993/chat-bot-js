@@ -19,6 +19,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const botName = 'Chat Express';
 
+io.set('origins', '*:*');
+
 // Run when client connects
 io.on('connection', socket => {
   socket.on('joinRoom', ({ username, room }) => {
